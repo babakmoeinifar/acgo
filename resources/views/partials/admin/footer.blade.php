@@ -74,16 +74,16 @@
 
 @if ($message = Session::get('success'))
     <script>
-        toastrs('Success', '{!! $message !!}', 'success')
+        toastrs('موفق', '{!! $message !!}', 'success')
     </script>
 @endif
 
 @if ($message = Session::get('error'))
-    <script>toastrs('Error', '{!! $message !!}', 'error')</script>
+    <script>toastrs('خطا', '{!! $message !!}', 'error')</script>
 @endif
 
 @if ($message = Session::get('info'))
-    <script>toastrs('Info', '{!! $message !!}', 'info')</script>
+    <script>toastrs('اطلاعیه', '{!! $message !!}', 'info')</script>
 @endif
 
 @stack('script-page')

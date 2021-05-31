@@ -108,7 +108,7 @@
                                                         </div>
                                                     </div>
                                                 @endif
-                                                <div class="col-lg-12 text-right">
+                                                <div class="col-lg-12 text-right mt-2">
                                                     <a href="{{ route('dashboard') }}" class="btn btn-secondary">{{__('Cancel')}}</a>
                                                     @can('edit account')
                                                         {{Form::submit(__('Save Change'),array('class'=>'btn btn-primary'))}}
@@ -150,7 +150,7 @@
                                                         </span>
                                                         @enderror
                                                     </div>
-                                                    <div class="col-lg-12 text-right">
+                                                    <div class="col-lg-12 text-right mt-2">
                                                         <a href="{{ route('dashboard') }}" class="btn btn-secondary">{{__('Cancel')}}</a>
                                                         {{Form::submit(__('Save Change'),array('class'=>'btn btn-primary'))}}
                                                     </div>

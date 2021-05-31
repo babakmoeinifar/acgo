@@ -1,1 +1,1 @@
-<?php return ['failed'=>'These credentials do not match our records.','throttle'=>'Too many login attempts. Please try again in :seconds seconds.',];
+<?php return ['failed'=>'این مدارک با سوابق ما مطابقت ندارد.','throttle'=>'تلاش برای ورود به سیستم بسیار زیاد است. :seconds ثانیه دیگر لطفاً دوباره امتحان کنید.',];

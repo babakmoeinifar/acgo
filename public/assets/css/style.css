@@ -1741,7 +1741,9 @@ h6 .badge {
     border: none;
     width: 200px; }
 .dropdown-menu.show {
-    display: block !important; }
+    display: block !important;
+    margin-right: -73px;
+}
 .dropdown-menu a {
     font-size: 13px; }
 .dropdown-menu .dropdown-title {
@@ -1752,7 +1754,7 @@ h6 .badge {
     color: #191d21 !important;
     padding: 10px 20px;
     line-height: 20px;
-    color: #98a6ad; }
+     }
 .dropdown-menu.dropdown-menu-sm a {
     font-size: 14px;
     letter-spacing: normal;
@@ -1956,7 +1958,9 @@ body {
     font-size: 14px;
     font-weight: 400;
     font-family: 'Nunito', 'Segoe UI', arial;
-    color: #6c757d; }
+    color: #6c757d;
+    text-align: right;
+}
 
 a.bb {
     text-decoration: none;
@@ -2581,7 +2585,7 @@ body.layout-3 .main-footer {
     display: inline-block;
     width: 100%;
     text-align: center;
-    height: 60px;
+    height: 80px;
     line-height: 60px; }
 .main-sidebar .sidebar-brand.sidebar-brand-sm {
     display: none; }
@@ -2638,7 +2642,7 @@ body.layout-3 .main-footer {
     margin-top: 3px;
     width: 100%; }
 .main-sidebar .sidebar-menu li a:hover {
-    background-color: #fcfcfd; }
+    background-color: lightgray; }
 .main-sidebar .sidebar-menu li.active a {
     color: #6777ef;
     font-weight: 600;

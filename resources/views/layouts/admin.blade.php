@@ -3,7 +3,7 @@
 <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
 @include('partials.admin.head')
 <body>
-<div id="app">
+<div id="app" style="text-align: right !important;">
     <div class="main-wrapper main-wrapper-1">
         @include('partials.admin.header')
 

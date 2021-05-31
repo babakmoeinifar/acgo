@@ -74,7 +74,7 @@
 
 <?php if($message = Session::get('success')): ?>
     <script>
-        toastrs('Success', '<?php echo $message; ?>', 'success')
+        toastrs('موفق', '<?php echo $message; ?>', 'success')
     </script>
 <?php endif; ?>
 

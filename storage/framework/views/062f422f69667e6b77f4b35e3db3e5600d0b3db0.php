@@ -3,7 +3,7 @@
 <meta name="csrf-token" id="csrf-token" content="<?php echo e(csrf_token()); ?>">
 <?php echo $__env->make('partials.admin.head', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <body>
-<div id="app">
+<div id="app" style="text-align: right !important;">
     <div class="main-wrapper main-wrapper-1">
         <?php echo $__env->make('partials.admin.header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 

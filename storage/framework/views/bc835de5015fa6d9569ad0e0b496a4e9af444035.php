@@ -69,7 +69,7 @@
                                                                         </div>
                                                                     </div>
                                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                                                                <div class="col-lg-12 text-right">
+                                                                <div class="col-lg-12 text-right mt-2">
                                                                     <button class="btn btn-primary" type="submit"><?php echo e(__('Save Changes')); ?></button>
                                                                 </div>
 
@@ -138,7 +138,7 @@
                                                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                                             </div>
-                                                            <div class="col-lg-12 text-right">
+                                                            <div class="col-lg-12 text-right mt-2">
                                                                 <button class="btn btn-primary" type="submit"><?php echo e(__('Save Changes')); ?></button>
                                                             </div>
                                                         </form>

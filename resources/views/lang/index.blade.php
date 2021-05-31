@@ -69,7 +69,7 @@
                                                                         </div>
                                                                     </div>
                                                                 @endforeach
-                                                                <div class="col-lg-12 text-right">
+                                                                <div class="col-lg-12 text-right mt-2">
                                                                     <button class="btn btn-primary" type="submit">{{ __('Save Changes')}}</button>
                                                                 </div>
 
@@ -138,7 +138,7 @@
                                                                     @endforeach
                                                                 @endforeach
                                                             </div>
-                                                            <div class="col-lg-12 text-right">
+                                                            <div class="col-lg-12 text-right mt-2">
                                                                 <button class="btn btn-primary" type="submit">{{ __('Save Changes')}}</button>
                                                             </div>
                                                         </form>
