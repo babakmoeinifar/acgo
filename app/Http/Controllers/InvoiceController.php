@@ -434,22 +434,37 @@ class InvoiceController extends Controller
             }
 
             if ($customer['contact']) {
-                $sms = new FastSms;
-                $sms->sendMessage([
-                    "TemplateId" => 49118,
-                    "Mobile" => str_starts_with($customer['contact'], '0') ?
-                        $customer['contact'] : '0'.$customer['contact'],
-                    "ParameterArray" => [
-                        [
-                            "Parameter" => "factor",
-                            "ParameterValue" => $payment->invoice
-                        ],
-                        [
-                            "Parameter" => "amount",
-                            "ParameterValue" => $payment->amount
-                        ],
-                    ],
-                ]);
+                try {
+                    date_default_timezone_set("Asia/Tehran");
+
+                    // your sms.ir panel configuration
+                    $APIKey = "d90d20bb8d4b91d4c8090b76";
+                    $SecretKey = "accgo";
+                    $APIURL = "https://ws.sms.ir/";
+
+                    // message data
+                    $data = array(
+                        "ParameterArray" => array(
+                            array(
+                                "Parameter" => "factor",
+                                "ParameterValue" => "34r3"
+                            ),
+                            array(
+                                "Parameter" => "amount",
+                                "ParameterValue" => "22000"
+                            ),
+                        ),
+                        "Mobile" => "09187643303",
+                        "TemplateId" => "49118"
+                    );
+
+                    $SmsIR_UltraFastSend = new SmsIR_UltraFastSend($APIKey, $SecretKey, $APIURL);
+                    $UltraFastSend = $SmsIR_UltraFastSend->ultraFastSend($data);
+//                    var_dump($UltraFastSend);
+
+                } catch (Exeption $e) {
+                    echo 'Error UltraFastSend : ' . $e->getMessage();
+                }
             }
 
             return redirect()->back()->with('success', __('Payment successfully added.') . ((isset($smtp_error)) ? '<br> <span class="text-danger">' . $smtp_error . '</span>' : ''));
