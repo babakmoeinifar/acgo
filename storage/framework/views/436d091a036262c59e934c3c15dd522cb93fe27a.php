@@ -254,26 +254,26 @@
                         <ul class="list-unstyled list-unstyled-border">
                             <li class="media">
                                 <div class="media-body">
-                                    <div class="media-right"><?php echo e(\Auth::user()->priceFormat(\Auth::user()->todayIncome())); ?></div>
                                     <div class="media-title"><a href="#"><?php echo e(__('Income Today')); ?></a></div>
+                                    <div class="media-right"><?php echo e(\Auth::user()->priceFormat(\Auth::user()->todayIncome())); ?></div>
                                 </div>
                             </li>
                             <li class="media">
                                 <div class="media-body">
-                                    <div class="media-right"><?php echo e(\Auth::user()->priceFormat(\Auth::user()->todayExpense())); ?></div>
                                     <div class="media-title"><a href="#"><?php echo e(__('Expense Today')); ?></a></div>
+                                    <div class="media-right"><?php echo e(\Auth::user()->priceFormat(\Auth::user()->todayExpense())); ?></div>
                                 </div>
                             </li>
                             <li class="media">
                                 <div class="media-body">
-                                    <div class="media-right"><?php echo e(\Auth::user()->priceFormat(\Auth::user()->incomeCurrentMonth())); ?></div>
                                     <div class="media-title"><a href="#"><?php echo e(__('Income This Month')); ?></a></div>
+                                    <div class="media-right"><?php echo e(\Auth::user()->priceFormat(\Auth::user()->incomeCurrentMonth())); ?></div>
                                 </div>
                             </li>
                             <li class="media">
                                 <div class="media-body">
-                                    <div class="media-right"><?php echo e(\Auth::user()->priceFormat(\Auth::user()->expenseCurrentMonth())); ?></div>
                                     <div class="media-title"><a href="#"><?php echo e(__('Expense This Month')); ?></a></div>
+                                    <div class="media-right"><?php echo e(\Auth::user()->priceFormat(\Auth::user()->expenseCurrentMonth())); ?></div>
                                 </div>
                             </li>
                         </ul>
@@ -508,20 +508,20 @@
                                 <ul class="list-unstyled list-unstyled-border">
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($weeklyInvoice['invoiceTotal'])); ?></div>
                                             <div class="media-title"><a href="#"><?php echo e(__('Total Invoice Generated')); ?></a></div>
+                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($weeklyInvoice['invoiceTotal'])); ?></div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($weeklyInvoice['invoicePaid'])); ?></div>
                                             <div class="media-title"><a href="#"><?php echo e(__('Total Paid')); ?></a></div>
+                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($weeklyInvoice['invoicePaid'])); ?></div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($weeklyInvoice['invoiceDue'])); ?></div>
                                             <div class="media-title"><a href="#"><?php echo e(__('Total Due')); ?></a></div>
+                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($weeklyInvoice['invoiceDue'])); ?></div>
                                         </div>
                                     </li>
                                 </ul>
@@ -535,20 +535,20 @@
                                 <ul class="list-unstyled list-unstyled-border">
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($monthlyInvoice['invoiceTotal'])); ?></div>
                                             <div class="media-title"><a href="#"><?php echo e(__('Total Invoice Generated')); ?></a></div>
+                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($monthlyInvoice['invoiceTotal'])); ?></div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($monthlyInvoice['invoicePaid'])); ?></div>
                                             <div class="media-title"><a href="#"><?php echo e(__('Total Paid')); ?></a></div>
+                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($monthlyInvoice['invoicePaid'])); ?></div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($monthlyInvoice['invoiceDue'])); ?></div>
                                             <div class="media-title"><a href="#"><?php echo e(__('Total Due')); ?></a></div>
+                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($monthlyInvoice['invoiceDue'])); ?></div>
                                         </div>
                                     </li>
                                 </ul>
@@ -625,20 +625,20 @@
                                 <ul class="list-unstyled list-unstyled-border">
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($weeklyBill['billTotal'])); ?></div>
                                             <div class="media-title"><a href="#"><?php echo e(__('Total Bill Generated')); ?></a></div>
+                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($weeklyBill['billTotal'])); ?></div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($weeklyBill['billPaid'])); ?></div>
                                             <div class="media-title"><a href="#"><?php echo e(__('Total Paid')); ?></a></div>
+                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($weeklyBill['billPaid'])); ?></div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($weeklyBill['billDue'])); ?></div>
                                             <div class="media-title"><a href="#"><?php echo e(__('Total Due')); ?></a></div>
+                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($weeklyBill['billDue'])); ?></div>
                                         </div>
                                     </li>
                                 </ul>
@@ -652,20 +652,20 @@
                                 <ul class="list-unstyled list-unstyled-border">
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($monthlyBill['billTotal'])); ?></div>
                                             <div class="media-title"><a href="#"><?php echo e(__('Total Bill Generated')); ?></a></div>
+                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($monthlyBill['billTotal'])); ?></div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($monthlyBill['billPaid'])); ?></div>
                                             <div class="media-title"><a href="#"><?php echo e(__('Total Paid')); ?></a></div>
+                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($monthlyBill['billPaid'])); ?></div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($monthlyBill['billDue'])); ?></div>
                                             <div class="media-title"><a href="#"><?php echo e(__('Total Due')); ?></a></div>
+                                            <div class="media-right"><?php echo e(\Auth::user()->priceFormat($monthlyBill['billDue'])); ?></div>
                                         </div>
                                     </li>
                                 </ul>

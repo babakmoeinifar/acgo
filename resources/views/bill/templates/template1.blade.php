@@ -527,15 +527,15 @@
                                         <table data-v-f2a183a6="" class="summary-table">
                                             <tbody data-v-f2a183a6="">
                                             <tr>
-                                                <td>{{__('Number')}}:</td>
+                                                <td>{{__('Number')}}</td>
                                                 <td>{{\App\Utility::billNumberFormat($settings,$bill->bill_id)}}</td>
                                             </tr>
                                             <tr>
-                                                <td>{{__('Issue Date')}}:</td>
+                                                <td>{{__('Issue Date')}}</td>
                                                 <td>{{\App\Utility::dateFormat($settings,$bill->issue_date)}}</td>
                                             </tr>
                                             <tr>
-                                                <td>{{__('Due Date')}}:</td>
+                                                <td>{{__('Due Date')}}</td>
                                                 <td>{{\App\Utility::dateFormat($settings,$bill->due_date)}}</td>
                                             </tr>
                                             </tbody>
@@ -548,7 +548,7 @@
                                 <div data-v-f2a183a6="" class="d-bill-to">
                                     <div class="row">
                                         <div class="bill_to">
-                                            <strong data-v-f2a183a6="">{{__('Bill To')}}:</strong>
+                                            <strong data-v-f2a183a6="">{{__('Bill To')}}</strong>
                                             <p>
                                                 {{!empty($vendor->billing_name)?$vendor->billing_name:''}}<br>
                                                 {{!empty($vendor->billing_phone)?$vendor->billing_phone:''}}<br>
@@ -558,7 +558,7 @@
                                             </p>
                                         </div>
                                         <div class="ship_to">
-                                            <strong data-v-f2a183a6="">{{__('Ship To')}}:</strong>
+                                            <strong data-v-f2a183a6="">{{__('Ship To')}}</strong>
                                             <p>
                                                 {{!empty($vendor->shipping_name)?$vendor->shipping_name:''}}<br>
                                                 {{!empty($vendor->shipping_phone)?$vendor->shipping_phone:''}}<br>
@@ -632,25 +632,25 @@
                                                 <div data-v-f2a183a6="" class="d-table-controls"></div>
                                                 <div data-v-f2a183a6="" class="d-table-summary">
                                                     <div data-v-f2a183a6="" class="d-table-summary-item">
-                                                        <div data-v-f2a183a6="" class="d-table-label">{{__('Subtotal')}}:</div>
+                                                        <div data-v-f2a183a6="" class="d-table-label">{{__('Subtotal')}}</div>
                                                         <div data-v-f2a183a6="" class="d-table-value">{{\App\Utility::priceFormat($settings,$bill->getSubTotal())}}</div>
                                                     </div>
                                                     @if($bill->discount_apply==1)
                                                         @if($bill->getTotalDiscount())
                                                             <div data-v-f2a183a6="" class="d-table-summary-item">
-                                                                <div data-v-f2a183a6="" class="d-table-label">{{__('Discount')}}:</div>
+                                                                <div data-v-f2a183a6="" class="d-table-label">{{__('Discount')}}</div>
                                                                 <div data-v-f2a183a6="" class="d-table-value">{{\App\Utility::priceFormat($settings,$bill->getTotalDiscount())}}</div>
                                                             </div>
                                                         @endif
                                                     @endif
                                                     @if($bill->getTotalTax())
                                                         <div data-v-f2a183a6="" class="d-table-summary-item">
-                                                            <div data-v-f2a183a6="" class="d-table-label">{{__('Tax')}} :</div>
+                                                            <div data-v-f2a183a6="" class="d-table-label">{{__('Tax')}} </div>
                                                             <div data-v-f2a183a6="" class="d-table-value">{{\App\Utility::priceFormat($settings,$bill->getTotalTax())}}</div>
                                                         </div>
                                                     @endif
                                                     <div data-v-f2a183a6="" class="d-table-summary-item" style="border-top: 1px solid {{$color}}; border-bottom: 1px solid {{$color}};">
-                                                        <div data-v-f2a183a6="" class="d-table-label">{{__('Total')}}:</div>
+                                                        <div data-v-f2a183a6="" class="d-table-label">{{__('Total')}}</div>
                                                         <div data-v-f2a183a6="" class="d-table-value">{{\App\Utility::priceFormat($settings,$bill->getSubTotal()-$bill->getTotalDiscount()+$bill->getTotalTax())}}</div>
                                                     </div>
                                                     <div data-v-f2a183a6="" class="d-table-summary-item" style="border-top: 1px solid {{$color}}; border-bottom: 1px solid {{$color}};">

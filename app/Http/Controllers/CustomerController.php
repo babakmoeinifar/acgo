@@ -90,7 +90,12 @@ class CustomerController extends Controller
 
             $objCustomer    = \Auth::user();
             $total_customer = $objCustomer->countCustomers();
-            $plan           = Plan::find($objCustomer->plan);
+            $planZero           = Plan::find($objCustomer->plan);
+            if($planZero){
+                $plan = $planZero;
+            } else {
+                $plan = Plan::findOrFail(1);
+            }
             if($total_customer < $plan->max_customers || $plan->max_customers == -1)
             {
                 $customer                   = new Customer();

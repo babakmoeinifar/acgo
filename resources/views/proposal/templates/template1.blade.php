@@ -518,7 +518,7 @@
                                             @if($settings['company_address']){{$settings['company_address']}}@endif
                                             @if($settings['company_city']) <br> {{$settings['company_city']}}, @endif @if($settings['company_state']){{$settings['company_state']}}@endif @if($settings['company_zipcode']) - {{$settings['company_zipcode']}}@endif
                                             @if($settings['company_country']) <br>{{$settings['company_country']}}@endif
-                                            {{__('Registration Number')}} : {{$settings['registration_number']}} <br>
+                                            {{__('Registration Number')}}  {{$settings['registration_number']}} <br>
                                             {{__('VAT Number')}} : {{$settings['vat_number']}} <br>
                                         </p>
                                     </div>
@@ -528,15 +528,15 @@
                                         <table data-v-f2a183a6="" class="summary-table">
                                             <tbody data-v-f2a183a6="">
                                             <tr>
-                                                <td>{{__('Number')}}:</td>
+                                                <td>{{__('Number')}}</td>
                                                 <td>{{\App\Utility::proposalNumberFormat($settings,$proposal->proposal_id)}}</td>
                                             </tr>
                                             <tr>
-                                                <td>{{__('Issue Date')}}:</td>
+                                                <td>{{__('Issue Date')}}</td>
                                                 <td>{{\App\Utility::dateFormat($settings,$proposal->issue_date)}}</td>
                                             </tr>
                                             <tr>
-                                                <td>{{__('Due Date')}}:</td>
+                                                <td>{{__('Due Date')}}</td>
                                                 <td>{{\App\Utility::dateFormat($settings,$proposal->due_date)}}</td>
                                             </tr>
                                             </tbody>
@@ -549,7 +549,7 @@
                                 <div data-v-f2a183a6="" class="d-bill-to">
                                     <div class="row">
                                         <div class="bill_to">
-                                            <strong data-v-f2a183a6="">{{__('Bill To')}}:</strong>
+                                            <strong data-v-f2a183a6="">{{__('Bill To')}}</strong>
                                             <p>
                                                 {{!empty($customer->billing_name)?$customer->billing_name:''}}<br>
                                                 {{!empty($customer->billing_phone)?$customer->billing_phone:''}}<br>
@@ -559,7 +559,7 @@
                                             </p>
                                         </div>
                                         <div class="ship_to">
-                                            <strong data-v-f2a183a6="">{{__('Ship To')}}:</strong>
+                                            <strong data-v-f2a183a6="">{{__('Ship To')}}</strong>
                                             <p>
                                                 {{!empty($customer->shipping_name)?$customer->shipping_name:''}}<br>
                                                 {{!empty($customer->shipping_phone)?$customer->shipping_phone:''}}<br>
@@ -633,25 +633,25 @@
                                                 <div data-v-f2a183a6="" class="d-table-controls"></div>
                                                 <div data-v-f2a183a6="" class="d-table-summary">
                                                     <div data-v-f2a183a6="" class="d-table-summary-item">
-                                                        <div data-v-f2a183a6="" class="d-table-label">{{__('Subtotal')}}:</div>
+                                                        <div data-v-f2a183a6="" class="d-table-label">{{__('Subtotal')}}</div>
                                                         <div data-v-f2a183a6="" class="d-table-value">{{\App\Utility::priceFormat($settings,$proposal->getSubTotal())}}</div>
                                                     </div>
                                                     @if($proposal->discount_apply==1)
                                                         @if($proposal->getTotalDiscount())
                                                             <div data-v-f2a183a6="" class="d-table-summary-item">
-                                                                <div data-v-f2a183a6="" class="d-table-label">{{__('Discount')}}:</div>
+                                                                <div data-v-f2a183a6="" class="d-table-label">{{__('Discount')}}</div>
                                                                 <div data-v-f2a183a6="" class="d-table-value">{{\App\Utility::priceFormat($settings,$proposal->getTotalDiscount())}}</div>
                                                             </div>
                                                         @endif
                                                     @endif
                                                     @if($proposal->getTotalTax())
                                                         <div data-v-f2a183a6="" class="d-table-summary-item">
-                                                            <div data-v-f2a183a6="" class="d-table-label">{{__('Tax')}} :</div>
+                                                            <div data-v-f2a183a6="" class="d-table-label">{{__('Tax')}} </div>
                                                             <div data-v-f2a183a6="" class="d-table-value">{{\App\Utility::priceFormat($settings,$proposal->getTotalTax())}}</div>
                                                         </div>
                                                     @endif
                                                     <div data-v-f2a183a6="" class="d-table-summary-item" style="border-top: 1px solid {{$color}}; border-bottom: 1px solid {{$color}};">
-                                                        <div data-v-f2a183a6="" class="d-table-label">{{__('Total')}}:</div>
+                                                        <div data-v-f2a183a6="" class="d-table-label">{{__('Total')}}</div>
                                                         <div data-v-f2a183a6="" class="d-table-value">{{\App\Utility::priceFormat($settings,$proposal->getSubTotal()-$proposal->getTotalDiscount()+$proposal->getTotalTax())}}</div>
                                                     </div>
                                                 </div>

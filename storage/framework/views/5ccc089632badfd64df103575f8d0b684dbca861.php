@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="container mt-5">
+        <div class="container mt-5 text-right">
             <div class="row">
                 <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
                     <div class="login-brand">
@@ -28,14 +28,14 @@
                     </div>
 
                     <div class="card card-primary">
-                        <div class="card-header"><h4><?php echo e(__('Free Sign Up')); ?></h4></div>
+                        <div class="card-header"><h4>ثبت نام رایگان</h4></div>
 
                         <div class="card-body">
                             <?php echo e(Form::open(array('route'=>'register','method'=>'post','id'=>'loginForm'))); ?>
 
                             <div class="row">
                                 <div class="form-group col-6">
-                                    <?php echo e(Form::label('name',__('Name'))); ?>
+                                    <?php echo e(Form::label('name','نام')); ?>
 
                                     <?php echo e(Form::text('name',null,array('class'=>'form-control','placeholder'=>__('Enter Your Name')))); ?>
 
@@ -50,7 +50,7 @@ if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>
                                 </div>
                                 <div class="form-group col-6">
-                                    <?php echo e(Form::label('email',__('Email'))); ?>
+                                    <?php echo e(Form::label('email','ایمیل')); ?>
 
                                     <?php echo e(Form::text('email',null,array('class'=>'form-control','placeholder'=>__('Enter Your Email')))); ?>
 
@@ -68,7 +68,7 @@ endif; ?>
 
                             <div class="row">
                                 <div class="form-group col-6">
-                                    <?php echo e(Form::label('password',__('Password'))); ?>
+                                    <?php echo e(Form::label('password','رمز عبور')); ?>
 
                                     <?php echo e(Form::password('password',array('class'=>'form-control','placeholder'=>__('Enter Your Password')))); ?>
 
@@ -83,7 +83,7 @@ if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>
                                 </div>
                                 <div class="form-group col-6">
-                                    <?php echo e(Form::label('password_confirmation',__('Password Confirmation'))); ?>
+                                    <?php echo e(Form::label('password_confirmation','تکرار رمز عبور')); ?>
 
                                     <?php echo e(Form::password('password_confirmation',array('class'=>'form-control','placeholder'=>__('Enter Your Password')))); ?>
 
@@ -101,11 +101,11 @@ endif; ?>
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" name="agree" class="custom-control-input" id="agree">
-                                    <label class="custom-control-label" for="agree"><?php echo e(__('I agree with the terms and conditions')); ?></label>
+                                    <label class="custom-control-label" for="agree">با مقررات سایت موافق هستم</label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <?php echo e(Form::submit(__('Sign Up'),array('class'=>'btn btn-primary btn-lg btn-block','id'=>'saveBtn'))); ?>
+                                <?php echo e(Form::submit('ثبت عضویت',array('class'=>'btn btn-primary btn-lg btn-block','id'=>'saveBtn'))); ?>
 
                             </div>
                             <?php echo e(Form::close()); ?>
@@ -113,7 +113,7 @@ endif; ?>
                         </div>
                     </div>
                     <div class="mt-5 text-muted text-center">
-                        <?php echo e(__('Already Have Account?')); ?> <a href="<?php echo e(route('login')); ?>"><?php echo e(__('Log In')); ?></a>
+                        حساب دارید؟ <a href="<?php echo e(route('login')); ?>">ورود</a>
                     </div>
                     <div class="simple-footer">
                         <?php echo e((Utility::getValByName('footer_text')) ? Utility::getValByName('footer_text') :  __('Copyright AccountGo')); ?> <?php echo e(date('Y')); ?>

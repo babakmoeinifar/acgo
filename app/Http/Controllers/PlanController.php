@@ -43,13 +43,6 @@ class PlanController extends Controller
     {
         if(\Auth::user()->can('create plan'))
         {
-            if(empty(env('STRIPE_KEY')) || empty(env('STRIPE_SECRET')))
-            {
-                return redirect()->back()->with('error', __('Please set stripe api key & secret key for add new plan.'));
-            }
-            else
-            {
-
                 $validation                  = [];
                 $validation['name']          = 'required|unique:plans';
                 $validation['price']         = 'required|numeric|min:0';
@@ -90,7 +83,7 @@ class PlanController extends Controller
                     return redirect()->back()->with('error', __('Something is wrong.'));
                 }
             }
-        }
+
         else
         {
             return redirect()->back()->with('error', __('Permission denied.'));
@@ -120,12 +113,6 @@ class PlanController extends Controller
 
         if(\Auth::user()->can('edit plan'))
         {
-            if(empty(env('STRIPE_KEY')) || empty(env('STRIPE_SECRET')))
-            {
-                return redirect()->back()->with('error', __('Please set stripe api key & secret key for add new plan.'));
-            }
-            else
-            {
                 $plan = Plan::find($plan_id);
                 if(!empty($plan))
                 {
@@ -178,7 +165,6 @@ class PlanController extends Controller
                 {
                     return redirect()->back()->with('error', __('Plan not found.'));
                 }
-            }
         }
         else
         {
@@ -186,7 +172,6 @@ class PlanController extends Controller
         }
 
     }
-
 
     public function userPlan(Request $request)
     {

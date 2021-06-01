@@ -74,9 +74,9 @@ class InvoiceController extends Controller
             $customFields = CustomField::where('module', '=', 'invoice')->get();
             $invoice_number = \Auth::user()->invoiceNumberFormat($this->invoiceNumber());
             $customers = Customer::where('created_by', \Auth::user()->creatorId())->get()->pluck('name', 'id');
-            $customers->prepend('Select Customer', '');
+            $customers->prepend('انتخاب مشتری', '');
             $category = ProductServiceCategory::where('created_by', \Auth::user()->creatorId())->where('type', 1)->get()->pluck('name', 'id');
-            $category->prepend('Select Category', '');
+            $category->prepend('انتخاب دسته بندی', '');
             $product_services = ProductService::where('created_by', \Auth::user()->creatorId())->get()->pluck('name', 'id');
 
             return view('invoice.create', compact('customers', 'invoice_number', 'product_services', 'category', 'customFields'));
@@ -130,8 +130,8 @@ class InvoiceController extends Controller
             $invoice->invoice_id = $this->invoiceNumber();
             $invoice->customer_id = $request->customer_id;
             $invoice->status = 0;
-            $invoice->issue_date = $request->issue_date;
-            $invoice->due_date = $request->due_date;
+            $invoice->issue_date = Controller::convertPersianNumsToEng($request->issue_date);
+            $invoice->due_date = Controller::convertPersianNumsToEng($request->due_date);
             $invoice->category_id = $request->category_id;
             $invoice->ref_number = $request->ref_number;
             $invoice->discount_apply = isset($request->discount_apply) ? 1 : 0;
@@ -163,7 +163,7 @@ class InvoiceController extends Controller
             $invoice_number = \Auth::user()->invoiceNumberFormat($invoice->invoice_id);
             $customers = Customer::where('created_by', \Auth::user()->creatorId())->get()->pluck('name', 'id');
             $category = ProductServiceCategory::where('created_by', \Auth::user()->creatorId())->where('type', 1)->get()->pluck('name', 'id');
-            $category->prepend('Select Category', '');
+            $category->prepend('انتخاب دسته بندی', '');
             $product_services = ProductService::where('created_by', \Auth::user()->creatorId())->get()->pluck('name', 'id');
 
             $invoice->customField = CustomField::getData($invoice, 'invoice');
@@ -195,8 +195,8 @@ class InvoiceController extends Controller
                     return redirect()->route('bill.index')->with('error', $messages->first());
                 }
                 $invoice->customer_id = $request->customer_id;
-                $invoice->issue_date = $request->issue_date;
-                $invoice->due_date = $request->due_date;
+                $invoice->issue_date = Controller::convertPersianNumsToEng($request->issue_date);
+                $invoice->due_date = Controller::convertPersianNumsToEng($request->due_date);
                 $invoice->ref_number = $request->ref_number;
                 $invoice->discount_apply = isset($request->discount_apply) ? 1 : 0;
                 $invoice->category_id = $request->category_id;

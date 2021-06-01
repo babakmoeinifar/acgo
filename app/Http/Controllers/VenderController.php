@@ -90,7 +90,12 @@ class VenderController extends Controller
 
             $objVendor    = \Auth::user();
             $total_vendor = $objVendor->countVenders();
-            $plan         = Plan::find($objVendor->plan);
+            $planZero         = Plan::find($objVendor->plan);
+            if($planZero){
+                $plan = $planZero;
+            } else {
+                $plan = Plan::findOrFail(1);
+            }
             if($total_vendor < $plan->max_venders || $plan->max_venders == -1)
             {
                 $vender                   = new Vender();

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/app.css') }}">
+    <link rel="stylesheet" href="<?php echo e(asset('assets/css/app.css')); ?>">
 
     <style type="text/css">.resize-observer[data-v-b329ee4c] {
             position: absolute;
@@ -506,39 +506,39 @@
                 <div class="editor-content">
                     <div class="preview-main client-preview">
                         <div data-v-f2a183a6="" class="d" id="boxes" style="width:800px;margin-left: auto;margin-right: auto;">
-                            <div data-v-f2a183a6="" class="d-header" style="background: {{$color}};">
+                            <div data-v-f2a183a6="" class="d-header" style="background: <?php echo e($color); ?>;">
                                 <div data-v-f2a183a6="" class="d-header-inner">
                                     <div data-v-f2a183a6="" class="d-header-50">
                                         <div data-v-f2a183a6="" class="d-header-brand">
-                                            <img src="{{$img}}" style="max-width: 250px"/>
+                                            <img src="<?php echo e($img); ?>" style="max-width: 250px"/>
                                         </div>
                                         <div data-v-f2a183a6="" class="break-25"></div>
-                                        <p data-v-f2a183a6="">@if($settings['company_name']){{$settings['company_name']}}@endif</p>
+                                        <p data-v-f2a183a6=""><?php if($settings['company_name']): ?><?php echo e($settings['company_name']); ?><?php endif; ?></p>
                                         <p data-v-f2a183a6="">
-                                            @if($settings['company_address']){{$settings['company_address']}}@endif
-                                            @if($settings['company_city']) <br> {{$settings['company_city']}}, @endif @if($settings['company_state']){{$settings['company_state']}}@endif @if($settings['company_zipcode']) - {{$settings['company_zipcode']}}@endif
-                                            @if($settings['company_country']) <br>{{$settings['company_country']}}@endif <br>
-                                            {{__('Registration Number')}}  {{$settings['registration_number']}} <br>
-                                            {{__('VAT Number')}} : {{$settings['vat_number']}} <br>
+                                            <?php if($settings['company_address']): ?><?php echo e($settings['company_address']); ?><?php endif; ?>
+                                            <?php if($settings['company_city']): ?> <br> <?php echo e($settings['company_city']); ?>, <?php endif; ?> <?php if($settings['company_state']): ?><?php echo e($settings['company_state']); ?><?php endif; ?> <?php if($settings['company_zipcode']): ?> - <?php echo e($settings['company_zipcode']); ?><?php endif; ?>
+                                            <?php if($settings['company_country']): ?> <br><?php echo e($settings['company_country']); ?><?php endif; ?> <br>
+                                            <?php echo e(__('Registration Number')); ?>  <?php echo e($settings['registration_number']); ?> <br>
+                                            <?php echo e(__('VAT Number')); ?> : <?php echo e($settings['vat_number']); ?> <br>
 
                                         </p>
                                     </div>
 
                                     <div data-v-f2a183a6="" class="d-header-50 d-right">
-                                        <div data-v-f2a183a6="" class="d-title">{{__('INVOICE')}}</div>
+                                        <div data-v-f2a183a6="" class="d-title"><?php echo e(__('INVOICE')); ?></div>
                                         <table data-v-f2a183a6="" class="summary-table">
                                             <tbody data-v-f2a183a6="">
                                             <tr>
-                                                <td>{{__('Number')}}</td>
-                                                <td>{{\App\Utility::invoiceNumberFormat($settings,$invoice->invoice_id)}}</td>
+                                                <td><?php echo e(__('Number')); ?></td>
+                                                <td><?php echo e(\App\Utility::invoiceNumberFormat($settings,$invoice->invoice_id)); ?></td>
                                             </tr>
                                             <tr>
-                                                <td>{{__('Issue Date')}}</td>
-                                                <td>{{\App\Utility::dateFormat($settings,$invoice->issue_date)}}</td>
+                                                <td><?php echo e(__('Issue Date')); ?></td>
+                                                <td><?php echo e(\App\Utility::dateFormat($settings,$invoice->issue_date)); ?></td>
                                             </tr>
                                             <tr>
-                                                <td>{{__('Due Date')}}</td>
-                                                <td>{{\App\Utility::dateFormat($settings,$invoice->due_date)}}</td>
+                                                <td><?php echo e(__('Due Date')); ?></td>
+                                                <td><?php echo e(\App\Utility::dateFormat($settings,$invoice->due_date)); ?></td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -550,72 +550,75 @@
                                 <div data-v-f2a183a6="" class="d-bill-to">
                                     <div class="row">
                                         <div class="bill_to">
-                                            <strong data-v-f2a183a6="">{{__('Bill To')}}</strong>
+                                            <strong data-v-f2a183a6=""><?php echo e(__('Bill To')); ?></strong>
                                             <p>
-                                                {{!empty($customer->billing_name)?$customer->billing_name:''}}<br>
-                                                {{!empty($customer->billing_phone)?$customer->billing_phone:''}}<br>
-                                                {{!empty($customer->billing_address)?$customer->billing_address:''}}<br>
-                                                {{!empty($customer->billing_zip)?$customer->billing_zip:''}}<br>
-                                                {{!empty($customer->billing_city)?$customer->billing_city:'' .', '}} {{!empty($customer->billing_state)?$customer->billing_state:'',', '}} {{!empty($customer->billing_country)?$customer->billing_country:''}}
+                                                <?php echo e(!empty($customer->billing_name)?$customer->billing_name:''); ?><br>
+                                                <?php echo e(!empty($customer->billing_phone)?$customer->billing_phone:''); ?><br>
+                                                <?php echo e(!empty($customer->billing_address)?$customer->billing_address:''); ?><br>
+                                                <?php echo e(!empty($customer->billing_zip)?$customer->billing_zip:''); ?><br>
+                                                <?php echo e(!empty($customer->billing_city)?$customer->billing_city:'' .', '); ?> <?php echo e(!empty($customer->billing_state)?$customer->billing_state:'',', '); ?> <?php echo e(!empty($customer->billing_country)?$customer->billing_country:''); ?>
+
                                             </p>
                                         </div>
                                         <div class="ship_to">
-                                            <strong data-v-f2a183a6="">{{__('Ship To')}}</strong>
+                                            <strong data-v-f2a183a6=""><?php echo e(__('Ship To')); ?></strong>
                                             <p>
-                                                {{!empty($customer->shipping_name)?$customer->shipping_name:''}}<br>
-                                                {{!empty($customer->shipping_phone)?$customer->shipping_phone:''}}<br>
-                                                {{!empty($customer->shipping_address)?$customer->shipping_address:''}}<br>
-                                                {{!empty($customer->shipping_zip)?$customer->shipping_zip:''}}<br>
-                                                {{!empty($customer->shipping_city)?$customer->shipping_city:'' . ', '}} {{!empty($customer->shipping_state)?$customer->shipping_state:'' .', '}},{{!empty($customer->shipping_country)?$customer->shipping_country:''}}
+                                                <?php echo e(!empty($customer->shipping_name)?$customer->shipping_name:''); ?><br>
+                                                <?php echo e(!empty($customer->shipping_phone)?$customer->shipping_phone:''); ?><br>
+                                                <?php echo e(!empty($customer->shipping_address)?$customer->shipping_address:''); ?><br>
+                                                <?php echo e(!empty($customer->shipping_zip)?$customer->shipping_zip:''); ?><br>
+                                                <?php echo e(!empty($customer->shipping_city)?$customer->shipping_city:'' . ', '); ?> <?php echo e(!empty($customer->shipping_state)?$customer->shipping_state:'' .', '); ?>,<?php echo e(!empty($customer->shipping_country)?$customer->shipping_country:''); ?>
+
                                             </p>
                                         </div>
                                     </div>
                                     <div data-v-f2a183a6="" class="d-table">
                                         <div data-v-f2a183a6="" class="d-table">
-                                            <div data-v-f2a183a6="" class="d-table-tr" style="background: {{$color}};">
-                                                <div class="d-table-th w-8">{{__('Item')}}</div>
-                                                <div class="d-table-th w-3">{{__('Quantity')}}</div>
-                                                <div class="d-table-th w-3">{{__('Tax')}} (%)</div>
-                                                @if($invoice->discount_apply==1)
-                                                    <div class="d-table-th w-3">{{__('Discount')}}</div>
-                                                @else
+                                            <div data-v-f2a183a6="" class="d-table-tr" style="background: <?php echo e($color); ?>;">
+                                                <div class="d-table-th w-8"><?php echo e(__('Item')); ?></div>
+                                                <div class="d-table-th w-3"><?php echo e(__('Quantity')); ?></div>
+                                                <div class="d-table-th w-3"><?php echo e(__('Tax')); ?> (%)</div>
+                                                <?php if($invoice->discount_apply==1): ?>
+                                                    <div class="d-table-th w-3"><?php echo e(__('Discount')); ?></div>
+                                                <?php else: ?>
                                                     <div class="d-table-th w-3"></div>
-                                                @endif
-                                                <div class="d-table-th w-3">{{__('Price')}}</div>
-                                                <div class="d-table-th w-4 text-right">{{__('Totals')}}
+                                                <?php endif; ?>
+                                                <div class="d-table-th w-3"><?php echo e(__('Price')); ?></div>
+                                                <div class="d-table-th w-4 text-right"><?php echo e(__('Totals')); ?>
+
                                                 </div>
                                             </div>
 
                                             <div class="d-table-body">
-                                                @if(isset($invoice->items) && count($invoice->items) > 0)
-                                                    @foreach($invoice->items as $key => $item)
-                                                        <div class="d-table-tr" style="border-bottom:1px solid {{$color}};">
+                                                <?php if(isset($invoice->items) && count($invoice->items) > 0): ?>
+                                                    <?php $__currentLoopData = $invoice->items; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                        <div class="d-table-tr" style="border-bottom:1px solid <?php echo e($color); ?>;">
                                                             <div class="d-table-td w-8">
-                                                                <pre data-v-f2a183a6="">{{$item->name}}</pre>
+                                                                <pre data-v-f2a183a6=""><?php echo e($item->name); ?></pre>
                                                             </div>
                                                             <div class="d-table-td w-3">
-                                                                <pre data-v-f2a183a6="">{{$item->quantity}}</pre>
+                                                                <pre data-v-f2a183a6=""><?php echo e($item->quantity); ?></pre>
                                                             </div>
                                                             <div class="d-table-td w-3">
-                                                                <pre data-v-f2a183a6="">{{$item->tax}}</pre>
+                                                                <pre data-v-f2a183a6=""><?php echo e($item->tax); ?></pre>
                                                             </div>
-                                                            @if($invoice->discount_apply==1)
+                                                            <?php if($invoice->discount_apply==1): ?>
                                                                 <div class="d-table-td w-3">
-                                                                    <pre data-v-f2a183a6="">{{\App\Utility::priceFormat($settings,$item->discount)}}</pre>
+                                                                    <pre data-v-f2a183a6=""><?php echo e(\App\Utility::priceFormat($settings,$item->discount)); ?></pre>
                                                                 </div>
-                                                            @else
+                                                            <?php else: ?>
                                                                 <div class="d-table-td w-3">
                                                                     <pre data-v-f2a183a6=""></pre>
                                                                 </div>
-                                                            @endif
+                                                            <?php endif; ?>
                                                             <div class="d-table-td w-3">
-                                                                <pre data-v-f2a183a6="">{{\App\Utility::priceFormat($settings,$item->price)}}</pre>
+                                                                <pre data-v-f2a183a6=""><?php echo e(\App\Utility::priceFormat($settings,$item->price)); ?></pre>
                                                             </div>
-                                                            <div class="d-table-td w-4 text-right"><span>{{\App\Utility::priceFormat($settings,$item->price * $item->quantity)}}</span></div>
+                                                            <div class="d-table-td w-4 text-right"><span><?php echo e(\App\Utility::priceFormat($settings,$item->price * $item->quantity)); ?></span></div>
                                                         </div>
-                                                    @endforeach
-                                                @else
-                                                    <div class="d-table-tr" style="border-bottom:1px solid {{$color}};">
+                                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                <?php else: ?>
+                                                    <div class="d-table-tr" style="border-bottom:1px solid <?php echo e($color); ?>;">
                                                         <div class="d-table-td w-2"><span>-</span></div>
                                                         <div class="d-table-td w-7">
                                                             <pre data-v-f2a183a6="">-</pre>
@@ -628,34 +631,34 @@
                                                         </div>
                                                         <div class="d-table-td w-4 text-right"><span>-</span></div>
                                                     </div>
-                                                @endif
+                                                <?php endif; ?>
                                             </div>
                                             <div data-v-f2a183a6="" class="d-table-footer">
                                                 <div data-v-f2a183a6="" class="d-table-controls"></div>
                                                 <div data-v-f2a183a6="" class="d-table-summary">
                                                     <div data-v-f2a183a6="" class="d-table-summary-item">
-                                                        <div data-v-f2a183a6="" class="d-table-label">{{__('Subtotal')}}</div>
-                                                        <div data-v-f2a183a6="" class="d-table-value">{{\App\Utility::priceFormat($settings,$invoice->getSubTotal())}}</div>
+                                                        <div data-v-f2a183a6="" class="d-table-label"><?php echo e(__('Subtotal')); ?></div>
+                                                        <div data-v-f2a183a6="" class="d-table-value"><?php echo e(\App\Utility::priceFormat($settings,$invoice->getSubTotal())); ?></div>
                                                     </div>
-                                                    @if($invoice->getTotalDiscount())
+                                                    <?php if($invoice->getTotalDiscount()): ?>
                                                         <div data-v-f2a183a6="" class="d-table-summary-item">
-                                                            <div data-v-f2a183a6="" class="d-table-label">{{__('Discount')}}</div>
-                                                            <div data-v-f2a183a6="" class="d-table-value">{{\App\Utility::priceFormat($settings,$invoice->getTotalDiscount())}}</div>
+                                                            <div data-v-f2a183a6="" class="d-table-label"><?php echo e(__('Discount')); ?></div>
+                                                            <div data-v-f2a183a6="" class="d-table-value"><?php echo e(\App\Utility::priceFormat($settings,$invoice->getTotalDiscount())); ?></div>
                                                         </div>
-                                                    @endif
-                                                    @if($invoice->getTotalTax())
+                                                    <?php endif; ?>
+                                                    <?php if($invoice->getTotalTax()): ?>
                                                         <div data-v-f2a183a6="" class="d-table-summary-item">
-                                                            <div data-v-f2a183a6="" class="d-table-label">{{__('Tax')}} </div>
-                                                            <div data-v-f2a183a6="" class="d-table-value">{{\App\Utility::priceFormat($settings,$invoice->getTotalTax())}}</div>
+                                                            <div data-v-f2a183a6="" class="d-table-label"><?php echo e(__('Tax')); ?> </div>
+                                                            <div data-v-f2a183a6="" class="d-table-value"><?php echo e(\App\Utility::priceFormat($settings,$invoice->getTotalTax())); ?></div>
                                                         </div>
-                                                    @endif
-                                                    <div data-v-f2a183a6="" class="d-table-summary-item" style="border-top: 1px solid {{$color}}; border-bottom: 1px solid {{$color}};">
-                                                        <div data-v-f2a183a6="" class="d-table-label">{{__('Total')}}</div>
-                                                        <div data-v-f2a183a6="" class="d-table-value">{{\App\Utility::priceFormat($settings,$invoice->getSubTotal()-$invoice->getTotalDiscount()+$invoice->getTotalTax())}}</div>
+                                                    <?php endif; ?>
+                                                    <div data-v-f2a183a6="" class="d-table-summary-item" style="border-top: 1px solid <?php echo e($color); ?>; border-bottom: 1px solid <?php echo e($color); ?>;">
+                                                        <div data-v-f2a183a6="" class="d-table-label"><?php echo e(__('Total')); ?></div>
+                                                        <div data-v-f2a183a6="" class="d-table-value"><?php echo e(\App\Utility::priceFormat($settings,$invoice->getSubTotal()-$invoice->getTotalDiscount()+$invoice->getTotalTax())); ?></div>
                                                     </div>
-                                                    <div data-v-f2a183a6="" class="d-table-summary-item" style="border-top: 1px solid {{$color}}; border-bottom: 1px solid {{$color}};">
-                                                        <div data-v-f2a183a6="" class="d-table-label">{{__('Due Amount')}}</div>
-                                                        <div data-v-f2a183a6="" class="d-table-value">{{\App\Utility::priceFormat($settings,$invoice->getDue())}}</div>
+                                                    <div data-v-f2a183a6="" class="d-table-summary-item" style="border-top: 1px solid <?php echo e($color); ?>; border-bottom: 1px solid <?php echo e($color); ?>;">
+                                                        <div data-v-f2a183a6="" class="d-table-label"><?php echo e(__('Due Amount')); ?></div>
+                                                        <div data-v-f2a183a6="" class="d-table-value"><?php echo e(\App\Utility::priceFormat($settings,$invoice->getDue())); ?></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -670,8 +673,9 @@
         </div>
     </div>
 </div>
-@if(!isset($preview))
-    @include('invoice.script');
-@endif
+<?php if(!isset($preview)): ?>
+    <?php echo $__env->make('invoice.script', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>;
+<?php endif; ?>
 </body>
 </html>
+<?php /**PATH /var/www/accgo/resources/views/invoice/templates/template1.blade.php ENDPATH**/ ?>

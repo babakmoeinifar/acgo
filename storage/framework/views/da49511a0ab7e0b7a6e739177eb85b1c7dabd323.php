@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
@@ -17,7 +17,7 @@
 </head>
 
 <body>
-<div id="app">
+<div id="app" style="text-align: right !important;">
     <?php echo $__env->yieldContent('content'); ?>
 </div>
 

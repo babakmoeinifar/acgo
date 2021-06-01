@@ -248,26 +248,26 @@
                         <ul class="list-unstyled list-unstyled-border">
                             <li class="media">
                                 <div class="media-body">
-                                    <div class="media-right">{{\Auth::user()->priceFormat(\Auth::user()->todayIncome())}}</div>
                                     <div class="media-title"><a href="#">{{__('Income Today')}}</a></div>
+                                    <div class="media-right">{{\Auth::user()->priceFormat(\Auth::user()->todayIncome())}}</div>
                                 </div>
                             </li>
                             <li class="media">
                                 <div class="media-body">
-                                    <div class="media-right">{{\Auth::user()->priceFormat(\Auth::user()->todayExpense())}}</div>
                                     <div class="media-title"><a href="#">{{__('Expense Today')}}</a></div>
+                                    <div class="media-right">{{\Auth::user()->priceFormat(\Auth::user()->todayExpense())}}</div>
                                 </div>
                             </li>
                             <li class="media">
                                 <div class="media-body">
-                                    <div class="media-right">{{\Auth::user()->priceFormat(\Auth::user()->incomeCurrentMonth())}}</div>
                                     <div class="media-title"><a href="#">{{__('Income This Month')}}</a></div>
+                                    <div class="media-right">{{\Auth::user()->priceFormat(\Auth::user()->incomeCurrentMonth())}}</div>
                                 </div>
                             </li>
                             <li class="media">
                                 <div class="media-body">
-                                    <div class="media-right">{{\Auth::user()->priceFormat(\Auth::user()->expenseCurrentMonth())}}</div>
                                     <div class="media-title"><a href="#">{{__('Expense This Month')}}</a></div>
+                                    <div class="media-right">{{\Auth::user()->priceFormat(\Auth::user()->expenseCurrentMonth())}}</div>
                                 </div>
                             </li>
                         </ul>
@@ -502,20 +502,20 @@
                                 <ul class="list-unstyled list-unstyled-border">
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right">{{\Auth::user()->priceFormat($weeklyInvoice['invoiceTotal'])}}</div>
                                             <div class="media-title"><a href="#">{{__('Total Invoice Generated')}}</a></div>
+                                            <div class="media-right">{{\Auth::user()->priceFormat($weeklyInvoice['invoiceTotal'])}}</div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right">{{\Auth::user()->priceFormat($weeklyInvoice['invoicePaid'])}}</div>
                                             <div class="media-title"><a href="#">{{__('Total Paid')}}</a></div>
+                                            <div class="media-right">{{\Auth::user()->priceFormat($weeklyInvoice['invoicePaid'])}}</div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right">{{\Auth::user()->priceFormat($weeklyInvoice['invoiceDue'])}}</div>
                                             <div class="media-title"><a href="#">{{__('Total Due')}}</a></div>
+                                            <div class="media-right">{{\Auth::user()->priceFormat($weeklyInvoice['invoiceDue'])}}</div>
                                         </div>
                                     </li>
                                 </ul>
@@ -529,20 +529,20 @@
                                 <ul class="list-unstyled list-unstyled-border">
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right">{{\Auth::user()->priceFormat($monthlyInvoice['invoiceTotal'])}}</div>
                                             <div class="media-title"><a href="#">{{__('Total Invoice Generated')}}</a></div>
+                                            <div class="media-right">{{\Auth::user()->priceFormat($monthlyInvoice['invoiceTotal'])}}</div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right">{{\Auth::user()->priceFormat($monthlyInvoice['invoicePaid'])}}</div>
                                             <div class="media-title"><a href="#">{{__('Total Paid')}}</a></div>
+                                            <div class="media-right">{{\Auth::user()->priceFormat($monthlyInvoice['invoicePaid'])}}</div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right">{{\Auth::user()->priceFormat($monthlyInvoice['invoiceDue'])}}</div>
                                             <div class="media-title"><a href="#">{{__('Total Due')}}</a></div>
+                                            <div class="media-right">{{\Auth::user()->priceFormat($monthlyInvoice['invoiceDue'])}}</div>
                                         </div>
                                     </li>
                                 </ul>
@@ -619,20 +619,20 @@
                                 <ul class="list-unstyled list-unstyled-border">
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right">{{\Auth::user()->priceFormat($weeklyBill['billTotal'])}}</div>
                                             <div class="media-title"><a href="#">{{__('Total Bill Generated')}}</a></div>
+                                            <div class="media-right">{{\Auth::user()->priceFormat($weeklyBill['billTotal'])}}</div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right">{{\Auth::user()->priceFormat($weeklyBill['billPaid'])}}</div>
                                             <div class="media-title"><a href="#">{{__('Total Paid')}}</a></div>
+                                            <div class="media-right">{{\Auth::user()->priceFormat($weeklyBill['billPaid'])}}</div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right">{{\Auth::user()->priceFormat($weeklyBill['billDue'])}}</div>
                                             <div class="media-title"><a href="#">{{__('Total Due')}}</a></div>
+                                            <div class="media-right">{{\Auth::user()->priceFormat($weeklyBill['billDue'])}}</div>
                                         </div>
                                     </li>
                                 </ul>
@@ -646,20 +646,20 @@
                                 <ul class="list-unstyled list-unstyled-border">
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right">{{\Auth::user()->priceFormat($monthlyBill['billTotal'])}}</div>
                                             <div class="media-title"><a href="#">{{__('Total Bill Generated')}}</a></div>
+                                            <div class="media-right">{{\Auth::user()->priceFormat($monthlyBill['billTotal'])}}</div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right">{{\Auth::user()->priceFormat($monthlyBill['billPaid'])}}</div>
                                             <div class="media-title"><a href="#">{{__('Total Paid')}}</a></div>
+                                            <div class="media-right">{{\Auth::user()->priceFormat($monthlyBill['billPaid'])}}</div>
                                         </div>
                                     </li>
                                     <li class="media">
                                         <div class="media-body">
-                                            <div class="media-right">{{\Auth::user()->priceFormat($monthlyBill['billDue'])}}</div>
                                             <div class="media-title"><a href="#">{{__('Total Due')}}</a></div>
+                                            <div class="media-right">{{\Auth::user()->priceFormat($monthlyBill['billDue'])}}</div>
                                         </div>
                                     </li>
                                 </ul>

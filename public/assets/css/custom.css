@@ -438,6 +438,7 @@ div.dataTables_wrapper div.dataTables_filter input {
     font-size: 14px;
     padding: 5px 10px;
     height: 35px;
+    width: 100px;
 }
 
 span.task-status {

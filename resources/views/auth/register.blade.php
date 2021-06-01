@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-        <div class="container mt-5">
+        <div class="container mt-5 text-right">
             <div class="row">
                 <div class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
                     <div class="login-brand">
@@ -28,14 +28,14 @@
                     </div>
 
                     <div class="card card-primary">
-                        <div class="card-header"><h4>{{ __('Free Sign Up') }}</h4></div>
+                        <div class="card-header"><h4>ثبت نام رایگان</h4></div>
 
                         <div class="card-body">
                             {{Form::open(array('route'=>'register','method'=>'post','id'=>'loginForm'))}}
                             <div class="row">
                                 <div class="form-group col-6">
-                                    {{Form::label('name',__('Name'))}}
-                                    {{Form::text('name',null,array('class'=>'form-control','placeholder'=>__('Enter Your Name')))}}
+                                    {{Form::label('name','نام')}}
+                                    {{Form::text('name',null,array('class'=>'form-control','placeholder'=>'نام و نام خانوادگی خود را وارد نمایید'))}}
                                     @error('name')
                                     <span class="invalid-name text-danger" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -43,8 +43,8 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-6">
-                                    {{Form::label('email',__('Email'))}}
-                                    {{Form::text('email',null,array('class'=>'form-control','placeholder'=>__('Enter Your Email')))}}
+                                    {{Form::label('email','ایمیل')}}
+                                    {{Form::text('email',null,array('class'=>'form-control','placeholder'=>'ایمیل خود را وارد نمایید'))}}
                                     @error('email')
                                     <span class="invalid-email text-danger" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -55,8 +55,8 @@
 
                             <div class="row">
                                 <div class="form-group col-6">
-                                    {{Form::label('password',__('Password'))}}
-                                    {{Form::password('password',array('class'=>'form-control','placeholder'=>__('Enter Your Password')))}}
+                                    {{Form::label('password','رمز عبور')}}
+                                    {{Form::password('password',array('class'=>'form-control','placeholder'=>'رمز عبور را وارد نمایید'))}}
                                     @error('password')
                                     <span class="invalid-password text-danger" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -64,7 +64,7 @@
                                     @enderror
                                 </div>
                                 <div class="form-group col-6">
-                                    {{Form::label('password_confirmation',__('Password Confirmation'))}}
+                                    {{Form::label('password_confirmation','تکرار رمز عبور')}}
                                     {{Form::password('password_confirmation',array('class'=>'form-control','placeholder'=>__('Enter Your Password')))}}
                                     @error('password')
                                     <span class="invalid-password_confirmation text-danger" role="alert">
@@ -76,17 +76,17 @@
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" name="agree" class="custom-control-input" id="agree">
-                                    <label class="custom-control-label" for="agree">{{__('I agree with the terms and conditions')}}</label>
+                                    <label class="custom-control-label" for="agree">با مقررات سایت موافق هستم</label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                {{Form::submit(__('Sign Up'),array('class'=>'btn btn-primary btn-lg btn-block','id'=>'saveBtn'))}}
+                                {{Form::submit('ثبت عضویت',array('class'=>'btn btn-primary btn-lg btn-block','id'=>'saveBtn'))}}
                             </div>
                             {{Form::close()}}
                         </div>
                     </div>
                     <div class="mt-5 text-muted text-center">
-                        {{__('Already Have Account?')}} <a href="{{ route('login') }}">{{ __('Log In') }}</a>
+                        حساب دارید؟ <a href="{{ route('login') }}">ورود</a>
                     </div>
                     <div class="simple-footer">
                         {{(Utility::getValByName('footer_text')) ? Utility::getValByName('footer_text') :  __('Copyright AccountGo') }} {{ date('Y') }}

@@ -29,17 +29,17 @@
                     </div>
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h4>{{__('User Login')}}</h4>
+                            <h4>ورود کاربر</h4>
                         </div>
                         <div class="col-12 text-right">
-                            <a href="{{route('customer.login')}}" class="btn btn-secondary">{{__('Customer Login')}}</a>
-                            <a href="{{route('vender.login')}}" class="btn btn-secondary m-">{{__('Vendor Login')}}</a>
+                            <a href="{{route('customer.login')}}" class="btn btn-secondary">ورود مشتری</a>
+                            <a href="{{route('vender.login')}}" class="btn btn-secondary m-">ورود خریدار</a>
                         </div>
                         <div class="card-body">
                             {{Form::open(array('route'=>'login','method'=>'post','id'=>'loginForm','class'=> 'login-form' ))}}
                             <div class="form-group">
-                                {{Form::label('email',__('Email'))}}
-                                {{Form::text('email',null,array('class'=>'form-control','placeholder'=>__('Enter Your Email')))}}
+                                {{Form::label('email','ایمیل')}}
+                                {{Form::text('email',null,array('class'=>'form-control','placeholder'=>'ایمیل خود را وارد نمایید'))}}
                                 @error('email')
                                 <span class="invalid-email text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -49,8 +49,8 @@
 
                             <div class="form-group">
                                 <div class="d-block">
-                                    {{Form::label('password',__('Password'))}}
-                                    {{Form::password('password',array('class'=>'form-control','placeholder'=>__('Enter Your Password')))}}
+                                    {{Form::label('password','رمز عبور')}}
+                                    {{Form::password('password',array('class'=>'form-control','placeholder'=>'رمز عبور را وارد نمایید'))}}
                                     @error('password')
                                     <span class="invalid-password text-danger" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -61,27 +61,24 @@
                             <div class="form-group">
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                    <label class="custom-control-label" for="remember">{{__('Remember Me')}}</label>
+                                    <label class="custom-control-label" for="remember">مرا به یاد داشته باش</label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                {{Form::submit(__('Login'),array('class'=>'btn btn-primary btn-lg btn-block','id'=>'saveBtn'))}}
+                                {{Form::submit('ورود',array('class'=>'btn btn-primary btn-lg btn-block','id'=>'saveBtn'))}}
                             </div>
                             {{Form::close()}}
                             <div class="text-center mt-4 mb-3">
                                 @if (Route::has('password.request'))
                                     <a href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        فراموشی رمز عبور
                                     </a>
                                 @endif
                             </div>
                         </div>
                     </div>
                     <div class="mt-5 text-muted text-center">
-                        {{__('Dont have an account?')}} <a href="{{ route('register') }}">{{ __('Register') }}</a>
-                    </div>
-                    <div class="simple-footer">
-                        {{(Utility::getValByName('footer_text')) ? Utility::getValByName('footer_text') :  __('Copyright AccountGo') }} {{ date('Y') }}
+                        حساب کاربری ندارید؟ <a href="{{ route('register') }}">ثبت نام</a>
                     </div>
                 </div>
             </div>

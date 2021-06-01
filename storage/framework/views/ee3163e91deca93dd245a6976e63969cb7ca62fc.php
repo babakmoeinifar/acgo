@@ -79,11 +79,11 @@
 <?php endif; ?>
 
 <?php if($message = Session::get('error')): ?>
-    <script>toastrs('Error', '<?php echo $message; ?>', 'error')</script>
+    <script>toastrs('خطا', '<?php echo $message; ?>', 'error')</script>
 <?php endif; ?>
 
 <?php if($message = Session::get('info')): ?>
-    <script>toastrs('Info', '<?php echo $message; ?>', 'info')</script>
+    <script>toastrs('اطلاعیه', '<?php echo $message; ?>', 'info')</script>
 <?php endif; ?>
 
 <?php echo $__env->yieldPushContent('script-page'); ?>

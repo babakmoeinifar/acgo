@@ -390,7 +390,7 @@
                                                         @enderror
                                                     </div>
                                                     <div class="form-group col-md-6">
-                                                        {{Form::label('registration_number',__('Company Registration Number *')) }}
+                                                        {{Form::label('registration_number','* شماره ثبت شرکت') }}
                                                         {{Form::text('registration_number',null,array('class'=>'form-control'))}}
                                                         @error('registration_number')
                                                         <span class="invalid-registration_number" role="alert">
@@ -399,7 +399,7 @@
                                                         @enderror
                                                     </div>
                                                     <div class="form-group col-md-6">
-                                                        {{Form::label('vat_number',__('VAT Number *')) }}
+                                                        {{Form::label('vat_number','* کد مالیاتی') }}
                                                         {{Form::text('vat_number',null,array('class'=>'form-control'))}}
                                                         @error('vat_number')
                                                             <span class="invalid-vat_number" role="alert">
