@@ -19,7 +19,7 @@
     </div>
     <div class="col-lg-4 col-md-4 col-sm-6">
         <div class="form-group">
-            <?php echo e(Form::label('contact',__('Contact'))); ?>
+            <?php echo e(Form::label('contact','شماره موبایل معتبر برای ارسال sms')); ?>
 
             <div class="input-group">
                 <div class="input-group-prepend">

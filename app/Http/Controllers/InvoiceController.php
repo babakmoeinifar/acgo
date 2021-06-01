@@ -437,7 +437,8 @@ class InvoiceController extends Controller
                 $sms = new FastSms;
                 $sms->sendMessage([
                     "TemplateId" => 49118,
-                    "Mobile" => $customer['contact'],
+                    "Mobile" => str_starts_with($customer['contact'], '0') ?
+                        $customer['contact'] : '0'.$customer['contact'],
                     "ParameterArray" => [
                         [
                             "Parameter" => "factor",

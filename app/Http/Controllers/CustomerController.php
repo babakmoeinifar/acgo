@@ -60,7 +60,7 @@ class CustomerController extends Controller
 
             $rules = [
                 'name' => 'required',
-                'contact' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/',
+                'contact' => 'required|iran_mobile',
                 'email' => 'required|email|unique:customers',
                 'password' => 'required',
                 'billing_name' => 'required',
@@ -80,7 +80,6 @@ class CustomerController extends Controller
             ];
 
             $validator = \Validator::make($request->all(), $rules);
-
             if($validator->fails())
             {
                 $messages = $validator->getMessageBag();
